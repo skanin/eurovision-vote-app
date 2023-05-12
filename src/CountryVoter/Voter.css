@@ -1,0 +1,51 @@
+.voter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    min-width: 0;
+}
+
+.voter-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+    flex-basis: 100%;
+}
+
+.voter-flag {
+    width: 80px;
+    height: 80px;
+    margin-right: 1rem;
+}
+
+.voter-country-name {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.voter-categories {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+    flex-basis: 100%;
+    width: 70%;
+}
+
+.voter-category {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+}
+
+.voter-submit-button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background-color: #0077ff;
+    color: #fff;
+    cursor: pointer;
+}

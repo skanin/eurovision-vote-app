@@ -44,3 +44,43 @@
     font-size: 1rem;
     margin: 0.5rem 0;
 }
+
+.voter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.voter-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.voter-flag {
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+}
+
+.voter-country-name {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.voter-categories {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.voter-submit-button {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background-color: #0077ff;
+    color: #fff;
+    cursor: pointer;
+}

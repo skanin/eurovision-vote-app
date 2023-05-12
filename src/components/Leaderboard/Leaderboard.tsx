@@ -25,10 +25,10 @@ const Leaderboard = ({ countries, votes }: LeaderboardProps) => {
 		return Object.keys(groupedVotes).map((countryId) => {
 			return {
 				id: countryId,
-				score: groupedVotes[countryId] / countries.length,
+				score: groupedVotes[countryId] / votes.filter((vote) => vote.country === countryId).length,
 			};
 		});
-	}, [groupedVotes, countries]);
+	}, [groupedVotes, votes]);
 
 	const sortedCountries = useMemo(() => {
 		return countries.sort((a, b) => {

@@ -18,8 +18,8 @@ const App = () => {
 						path='/login'
 						element={<Login />}
 					/>
-					<Route path='/statistics' element={<Statistics />} />
-					<Route path='/' element={<Home />} />
+					<Route path='/leaderboard' element={<Home />} />
+					<Route path='/' element={<Statistics />} />
 				</Routes>
 			</LoadWrapper>
 		</div>

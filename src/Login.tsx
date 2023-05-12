@@ -1,15 +1,35 @@
 import { browserLocalPersistence, setPersistence, signInAnonymously } from 'firebase/auth';
 import { collection, doc, setDoc } from 'firebase/firestore';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useAuthState, useUpdateProfile } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { auth, db } from './firebase';
 
 const Login = () => { 
     const [name, setName] = useState('');
     const [updateProfile, updating] = useUpdateProfile(auth);
     const [user, loading] = useAuthState(auth);
-    const navigate = useNavigate();
+	const navigate = useNavigate();
+	const [searchParams, setSearchParams] = useSearchParams();
+	const [pwd, setPwd] = useState<string | null>(null);
+
+	const storePassword = useCallback((pwd : string) => {
+		if (pwd) {
+			setPwd(pwd);
+		}
+	}, []);
+
+	useEffect(() => {
+		if (searchParams.has('password')) {
+			const pwd = searchParams.get('password');
+			if (pwd) {
+				searchParams.delete('password');
+				console.dir(searchParams.toString());
+				setSearchParams(searchParams);
+				storePassword(pwd);
+			}
+		}
+	}, [searchParams, setSearchParams, storePassword]);
 
     useEffect(() => { 
         if (user && !loading) {
@@ -20,6 +40,10 @@ const Login = () => {
     setPersistence(auth, browserLocalPersistence);
 
 	const signIn = async () => {
+		if (pwd !== import.meta.env.VITE_LOGIN_PASSWORD) {
+			console.log('Wrong password');
+			return;
+		}
 		await signInAnonymously(auth)
 			.then(async (user) => {
 				console.log('Signed in');
@@ -55,7 +79,7 @@ const Login = () => {
 				''
 			) : (
 				<button disabled={name.length === 0} onClick={() => signIn()} className='sign-in'>
-					Sign in
+					Logg inn
 				</button>
 			)}
 		</div>

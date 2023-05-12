@@ -1,0 +1,15 @@
+#votersRoot-grid {
+    display: grid;
+    grid-column: 1;
+    min-width: 0;
+    max-height: 100vh; 
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(0, 1fr));
+}
+
+#votersRoot-flex {
+    max-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 2;
+}

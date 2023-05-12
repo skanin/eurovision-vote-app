@@ -42,33 +42,31 @@ const Voter = ({ voter, votes, countries }: VoterProps) => {
 		return totalScore / lastVotedCountryVotes.length;
 	}, [votes, lastVotedCountry]);
 
-	const topFiveCountries = useMemo(() => {
+	const topTenCountries = useMemo(() => {
 		return Object.entries(groupedVotes)
 			.sort(([, a], [, b]) => b.score - a.score)
-			.slice(0, 5)
+			.slice(0, 10)
 			.map(([key]) => countries.find((country) => country.id === key));
 	}, [groupedVotes, countries]);
 
 	const getTextColor = (backgroundColor: string) => {
 		const c = backgroundColor.substring(1);
-		const rgb = parseInt(c, 16); 
+		const rgb = parseInt(c, 16);
 		const r = (rgb >> 16) & 0xff;
-		const g = (rgb >> 8) & 0xff; 
-		const b = (rgb >> 0) & 0xff; 
+		const g = (rgb >> 8) & 0xff;
+		const b = (rgb >> 0) & 0xff;
 
 		const luma = 0.2126 * r + 0.7152 * g + 0.0722 * b;
 
 		return luma < 60 ? 'white' : 'black';
-	}
-
-	const bgColor = '#' + (((1 << 24) * Math.random()) | 0).toString(16).padStart(6, '0');
+	};
 
 	return (
 		<div className='voter-flex'>
 			<div
 				style={{
-					backgroundColor: bgColor,
-					color: getTextColor(bgColor),
+					backgroundColor: voter.bgColor,
+					color: getTextColor(voter.bgColor),
 				}}
 				className='voterHeaderName'>
 				{voter.name}
@@ -77,7 +75,7 @@ const Voter = ({ voter, votes, countries }: VoterProps) => {
 				lastVotedCountry={lastVotedCountry}
 				lastVotedCountryAverageScore={lastVotedCountryAverageScore}
 			/>
-			<TopCountries countries={topFiveCountries} />
+			<TopCountries countries={topTenCountries} />
 		</div>
 	);
 };

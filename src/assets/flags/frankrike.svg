@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="146px" height="151px" viewBox="0 0 146 151" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>France</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M13.48,59.39 C13.798,30.88 28.635,21.957 36.715,21.957 C47.999,21.957 52.659,30.571 53.421,34.385 C54.182,38.197 58.453,41.245 59.825,34.994 C61.198,28.743 74.474,9.682 90.788,9.682 C105.73,9.682 110.905,25.09 110.457,38.197 C109.235,73.875 63.271,102.351 57.221,120.332 C51.834,109.441 13.1,93.699 13.48,59.39 Z M96.125,0.84 C82.707,0.84 66.838,10.75 57.233,27.219 C54.641,21.271 45.407,14.79 34.43,14.79 C25.585,14.79 0.757,25.845 0.757,61.525 C0.757,107.573 47.345,117.031 56.763,131.342 C57.41,132.327 59.495,133.07 60.29,130.718 C67.805,108.539 126.077,83.482 126.077,38.349 C126.077,13.038 109.543,0.84 96.125,0.84 L96.125,0.84 Z" id="path-1"></path>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.266191123 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="France" transform="translate(9.777344, 9.062500)">
+            <path d="M59.825,34.994 C58.453,41.245 54.182,38.197 53.421,34.385 C52.843,31.493 50.016,25.849 43.768,23.285 L43.768,107.608 C50.129,112.688 55.459,116.77 57.221,120.332 C59.686,113.006 68.777,103.938 78.768,93.35 L78.768,13.033 C68.345,18.788 60.839,30.379 59.825,34.994" id="Fill-25" fill="#FFFFFF"></path>
+            <path d="M44.252,107.994 L44.252,23.496 C42.157,22.556 39.668,21.957 36.715,21.957 C28.635,21.957 13.798,30.88 13.48,59.39 C13.221,82.764 31.115,97.519 44.252,107.994" id="Fill-26" fill="#174C78"></path>
+            <path d="M90.788,9.682 C86.466,9.682 82.36,11.027 78.629,13.111 L78.629,93.497 C93.193,78.07 109.73,59.406 110.457,38.197 C110.905,25.09 105.73,9.682 90.788,9.682" id="Fill-27" fill="#D74047"></path>
+            <g id="Fill-24">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

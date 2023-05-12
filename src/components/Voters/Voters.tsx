@@ -19,6 +19,7 @@ const Voters = ({ countries, votes }: VotersProps) => {
 			snapshot.docs.map((doc) => ({
 				id: doc.id,
 				name: doc.data().name,
+				bgColor: doc.data().bgColor,
 			}))
 		);
 	}, []);

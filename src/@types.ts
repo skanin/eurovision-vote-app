@@ -18,7 +18,8 @@ type country = {
 
 type DatabaseUser = {
 	id: string;
-	name: string;
+    name: string;
+    bgColor: string;
 };
 
 

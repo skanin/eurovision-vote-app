@@ -1,4 +1,5 @@
 import loadingGif from './assets/loading.gif';
+import './LoadWrapper.css';
 
 type LoadWrapperProps = {
 	loading: boolean;
@@ -8,7 +9,7 @@ type LoadWrapperProps = {
 
 const LoadWrapper = (props: LoadWrapperProps) => {
 	if (props.loading) {
-		return <img src={loadingGif} alt='loading...' />;
+		return <div id ="loadWrapper"><img src={loadingGif} alt='loading...' /></div>;
 	} else if (props.error) {
 		return <>Error....</>;
 	} else {

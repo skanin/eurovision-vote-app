@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="127px" height="132px" viewBox="0 0 127 132" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Ukraine</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M11.491,50.209 C11.764,25.792 24.471,18.149 31.391,18.149 C41.055,18.149 45.046,25.527 45.699,28.794 C46.351,32.058 50.009,34.668 51.184,29.315 C52.36,23.961 63.73,7.636 77.702,7.636 C90.5,7.636 94.932,20.833 94.548,32.058 C93.501,62.615 54.135,87.003 48.953,102.403 C44.34,93.075 11.166,79.594 11.491,50.209 Z M82.273,0.063 C70.781,0.063 57.19,8.551 48.964,22.656 C46.744,17.562 38.836,12.011 29.434,12.011 C21.859,12.011 0.595,21.479 0.595,52.038 C0.595,91.476 40.495,99.576 48.561,111.833 C49.115,112.676 50.901,113.313 51.582,111.298 C58.018,92.304 107.926,70.842 107.926,32.188 C107.926,10.51 93.765,0.063 82.273,0.063 L82.273,0.063 Z" id="path-1"></path>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.266191123 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Ukraine" transform="translate(9.339844, 10.246094)">
+            <polygon id="Fill-1" fill="#1A5193" points="91.527 5.142 71.652 4.486 59.444 13.181 49.527 24.923 36.777 15.829 15.777 21.454 5.652 39.267 12.214 77.892 49.34 106.017 93.965 59.892 100.902 20.142"></polygon>
+            <polygon id="Stroke-2" stroke="#1A1918" stroke-width="0.567" points="91.527 5.142 71.652 4.486 59.444 13.181 49.527 24.923 36.777 15.829 15.777 21.454 5.652 39.267 12.214 77.892 49.34 106.017 93.965 59.892 100.902 20.142"></polygon>
+            <polyline id="Fill-3" fill="#FCD131" points="10.045 57.708 10.634 77.79 47.759 105.915 94.935 53.554 95.672 49.331 10.045 57.708"></polyline>
+            <g id="Fill-20">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="145px" height="151px" viewBox="0 0 145 151" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Poland</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0.48,50.39 C0.798,21.881 15.635,12.957 23.715,12.957 C34.999,12.957 39.659,21.571 40.421,25.385 C41.182,29.197 45.453,32.245 46.825,25.994 C48.198,19.743 61.474,0.682 77.788,0.682 C92.73,0.682 97.905,16.09 97.457,29.197 C96.235,64.875 50.271,93.351 44.221,111.332 C38.834,100.441 0.1,84.699 0.48,50.39 Z" id="path-1"></path>
+        <path d="M13.48,59.39 C13.798,30.881 28.635,21.957 36.715,21.957 C47.999,21.957 52.659,30.571 53.421,34.385 C54.182,38.197 58.453,41.245 59.825,34.994 C61.198,28.743 74.474,9.682 90.788,9.682 C105.73,9.682 110.905,25.09 110.457,38.197 C109.235,73.875 63.271,102.351 57.221,120.332 C51.834,109.441 13.1,93.699 13.48,59.39 M96.125,0.84 C82.707,0.84 66.838,10.75 57.233,27.219 C54.641,21.271 45.407,14.79 34.43,14.79 C25.585,14.79 0.757,25.845 0.757,61.525 C0.757,107.573 47.345,117.031 56.763,131.342 C57.41,132.327 59.495,133.071 60.29,130.718 C67.805,108.539 126.077,83.482 126.077,38.349 C126.077,13.038 109.543,0.84 96.125,0.84" id="path-3"></path>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.266191123 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Poland" transform="translate(9.164062, 9.451172)">
+            <g id="Group-28" transform="translate(13.000000, 9.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-26"></g>
+                <path d="M1.641,60.9 C0.892,57.752 0.477,54.42 0.477,50.891 C0.477,50.725 0.478,50.558 0.48,50.39 C0.798,21.881 15.635,12.957 23.715,12.957 C34.999,12.957 39.659,21.571 40.421,25.385 C40.866,27.614 42.511,29.582 44.075,29.582 C45.186,29.582 46.255,28.59 46.825,25.994 C48.198,19.743 61.474,0.682 77.788,0.682 C92.147,0.682 97.486,14.91 97.484,27.652 C97.483,28.169 97.475,28.685 97.457,29.197 C97.191,36.971 94.802,44.401 91.163,51.457 L1.641,60.9" id="Fill-25" fill="#FFFFFF" mask="url(#mask-2)"></path>
+                <path d="M44.221,111.332 C39.417,101.62 8.097,88.052 1.641,60.9 L91.163,51.457 C78.101,76.784 48.953,97.269 44.221,111.332" id="Fill-27" fill="#DE4540" mask="url(#mask-2)"></path>
+            </g>
+            <g id="Fill-24">
+                <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-3"></use>
+            </g>
+        </g>
+    </g>
+</svg>

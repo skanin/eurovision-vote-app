@@ -3,7 +3,9 @@ import { collection, doc, setDoc } from 'firebase/firestore';
 import { useCallback, useEffect, useState } from 'react';
 import { useAuthState, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { auth, db } from './firebase';
+import { auth, db } from '../../firebase';
+
+import './Login.css';
 
 const Login = () => { 
     const [name, setName] = useState('');
@@ -44,6 +46,9 @@ const Login = () => {
 			console.log('Wrong password');
 			return;
 		}
+
+		const bgColor = '#' + (((1 << 24) * Math.random()) | 0).toString(16).padStart(6, '0');
+
 		await signInAnonymously(auth)
 			.then(async (user) => {
 				console.log('Signed in');
@@ -57,6 +62,7 @@ const Login = () => {
 				if (user) { 
 					await setDoc(doc(collection(db, 'users'), user.user.uid), {
 						name: user.user.displayName,
+						bgColor: bgColor,
 					});
 				}
 			})
@@ -71,8 +77,9 @@ const Login = () => {
 	};
 
 	return (
-		<div className='App'>
+		<div id='login-root'>
 			<h1>Hva heter du?</h1>
+			<form id='login-form' onSubmit={e => e.preventDefault()}>
 			<input type='text' value={name} onChange={handleNameChange} />
 			<br />
 			{user && !updating && !loading ? (
@@ -82,6 +89,7 @@ const Login = () => {
 					Logg inn
 				</button>
 			)}
+			</form>
 		</div>
 	);  
 }

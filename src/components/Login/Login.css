@@ -1,0 +1,28 @@
+#login-root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Adjusted height for mobile screens */
+    flex-direction: column; /* Stacks child elements in reverse order */
+    padding: 1em; /* Adjusted padding for mobile screens */
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 20em; /* Adjusted max-width for mobile screens */
+}
+
+#login-form input {
+    font-size: 1.2em; /* Adjusted font size for mobile screens */
+    padding: 0.5em; /* Adjusted padding for mobile screens */
+    margin: 0.5em 0;
+}
+
+#login-form button {
+    font-size: 1.2em; /* Adjusted font size for mobile screens */
+    padding: 0.5em; /* Adjusted padding for mobile screens */
+    margin: 0.5em 0;
+}

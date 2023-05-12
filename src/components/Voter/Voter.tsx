@@ -2,9 +2,7 @@ import { useMemo } from 'react';
 import { DatabaseUser, country, vote } from '../../@types';
 
 import LastVotedCountry from '../LastVotedCountry/LastVotedCountry';
-import Leaderboard from '../Leaderboard/Leaderboard';
 import TopCountries from '../TopCountries/TopCountries';
-import VoteGroup from '../VoteGroup/VoteGroup';
 import './Voter.css';
 
 type VoterProps = {
@@ -80,16 +78,6 @@ const Voter = ({ voter, votes, countries }: VoterProps) => {
 				lastVotedCountryAverageScore={lastVotedCountryAverageScore}
 			/>
 			<TopCountries countries={topFiveCountries} />
-			{/* {Object.entries(groupedVotes).map(([key, { votes, score, count }]) => (
-				<VoteGroup
-					key={key}
-					countryId={key}
-					votes={votes}
-					score={score}
-					count={count}
-					countries={countries}
-				/>
-			))} */}
 		</div>
 	);
 };

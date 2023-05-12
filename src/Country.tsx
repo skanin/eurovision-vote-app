@@ -1,13 +1,12 @@
 import {
-    QueryDocumentSnapshot,
-    QuerySnapshot,
-    addDoc,
-    collection,
-    doc,
-    onSnapshot,
-    query,
-    updateDoc,
-    where,
+	QueryDocumentSnapshot,
+	QuerySnapshot,
+	addDoc,
+	collection,
+	doc,
+	onSnapshot,
+	query,
+	where,
 } from 'firebase/firestore';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { country, vote } from './@types';
@@ -22,7 +21,7 @@ type CountryProps = {
 
 const Country = ({ country, type, voteValue }: CountryProps) => {
 	const [votes, setVotes] = useState<vote[]>([]);
-	const [userVotes, setUserVotes] = useState<vote[]>([]);
+	const [, setUserVotes] = useState<vote[]>([]);
 
 	const votesRef = useRef<vote[]>(votes);
 	const [loading, setLoading] = useState<boolean>(true);
@@ -79,27 +78,6 @@ const Country = ({ country, type, voteValue }: CountryProps) => {
 	useEffect(() => {
 		setUserVotes(() => [...votes.filter((vote) => vote.userId === auth.currentUser?.uid)]);
 	}, [votes]);
-
-	const add = (voteId: string) => {
-		if (!auth.currentUser) return;
-
-		const currVote = userVotes.find((vote) => vote.type === voteId);
-		console.log('currVote', currVote);
-
-		if (!currVote) {
-			addDoc(collection(db, 'votes'), {
-				countryId: country.id,
-				userId: auth.currentUser.uid,
-				voteType: voteId,
-				value: 1,
-				timestamp: new Date(),
-			});
-
-			return;
-		}
-
-		updateDoc(doc(db, `votes/${currVote.id}`), { ...currVote, value: currVote.score + 1 });
-	};
 
 	const getVoteGroupings = () => {
 		return Array.from(

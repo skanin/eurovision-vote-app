@@ -1,6 +1,4 @@
 .last-vote-flex {
-    /* display: grid; */
-    /* grid-template-columns: 1fr 2fr 1fr; */
     text-align: center;
     background-color: #BDBDBD;
     justify-items: center;
@@ -12,6 +10,7 @@
     justify-content: center;
     margin-top: .5em;
     min-width: 0;
+    font-weight: bold;
 }
 .last-vote-flex > img {
     flex: 1 1 auto;

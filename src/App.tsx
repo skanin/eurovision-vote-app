@@ -1,10 +1,10 @@
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import LoadWrapper from './LoadWrapper';
 import CountryVoter from './components/CountryVoter/CountryVoter';
 import Voter from './components/CountryVoter/Voter';
 import Home from './components/Home/Home';
+import LoadWrapper from './components/LoadWrapper/LoadWrapper';
 import Login from './components/Login/Login';
 import { auth } from './firebase';
 

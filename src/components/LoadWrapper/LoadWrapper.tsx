@@ -1,4 +1,4 @@
-import loadingGif from './assets/loading.gif';
+import loadingGif from '../../assets/loading.gif';
 import './LoadWrapper.css';
 
 type LoadWrapperProps = {

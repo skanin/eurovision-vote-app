@@ -1,24 +1,18 @@
 import { DocumentData, QuerySnapshot, collection, onSnapshot, query, where } from 'firebase/firestore';
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import { country, vote } from '../../@types';
 import { auth, db } from '../../firebase';
+import useRedirectToLogin from '../../hooks/useRedirectToLogin';
 import styles from './CountryVoter.module.css';
 
 const CountryVoter = () => {
     const [countries, setCountries] = useState<country[]>([]);
     const [votes, setVotes] = useState<vote[]>([]);
-    const [user, loading] = useAuthState(auth);
     const [search, setSearch] = useState<string>('');
-    
-    const navigate = useNavigate();
-
-    useEffect(() => {
-		if (!user && !loading) {
-			navigate('/login');
-		}
-	}, [user, loading, navigate]);
+	const navigate = useNavigate();
+	
+	const authenicated = useRedirectToLogin();
 
     const handleVotesSnapshot = useCallback((snapshot: QuerySnapshot<DocumentData>) => {
         console.log('Fetching votes...');
@@ -28,7 +22,9 @@ const CountryVoter = () => {
 	}, []);
 
 
-    useEffect(() => {
+	useEffect(() => {
+		if (!authenicated) return;
+
         const unsub = onSnapshot(collection(db, 'countries'), (snapshot) => {
             console.log('Fetching countries...');
             setCountries(snapshot.docs.map((doc) => ({ ...(doc.data() as country), id: doc.id })));
@@ -36,20 +32,29 @@ const CountryVoter = () => {
         });
 
         return unsub;
-    }, []);
+    }, [authenicated]);
 
-    useEffect(() => {
+	useEffect(() => {
+		if (!authenicated) return;
+
         const unsub = onSnapshot(
             query(collection(db, 'votes'), where('userId', '==', auth.currentUser?.uid)),
             handleVotesSnapshot
         );
 
         return unsub;
-    }, [handleVotesSnapshot]);
+    }, [handleVotesSnapshot, authenicated]);
 
     const filteredCountries = useMemo(() => {
-        return countries.filter((country) => !votes.some((vote) => vote.country === country.id) &&  country.countryName.toLowerCase().startsWith(search)).sort((a, b) => a.countryName.localeCompare(b.countryName));
-    }, [countries, votes, search]);
+		return countries
+			.filter(
+				(country) =>
+					!votes.some((vote) => vote.country === country.id) &&
+					country.countryName.toLowerCase().startsWith(search)
+			)
+			.sort((a, b) => a.countryName.localeCompare(b.countryName));
+	}, [countries, votes, search]);
+
 
     const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		setSearch(event.target.value);
@@ -58,24 +63,22 @@ const CountryVoter = () => {
     return (
 		<div className={styles.root}>
 			<h1 className={styles.title}>Velg et land å stemme på</h1>
-			<p className={styles.subtitle}>Land du allerede har stempt på vil bli borte</p>
+			<p className={styles.subtitle}>Land du allerede har stemt på vil bli borte</p>
 			<input
 				type='text'
 				placeholder='Søk...'
 				className={styles.search}
 				onChange={handleSearchChange}
-				autoComplete='off'
-				autoCapitalize='none'
 			/>
 			<div className={styles.grid}>
-				{filteredCountries.map((country) => (
+				{filteredCountries.map(({id, flagUrl, countryName}) => (
 					<div
-						key={country.id}
+						key={id}
 						className={styles.country}
-						onClick={() => navigate(`/vote/${country.id}`)}>
-                        <img src={country.flagUrl} alt={ country.countryName} />
+						onClick={() => navigate(`/vote/${id}`)}>
+                        <img src={flagUrl} alt={ countryName} />
 						<div className={styles.countryNameWrapper}>
-							<p className={styles.countryName}>{country.countryName}</p>
+							<p className={styles.countryName}>{countryName}</p>
 						</div>
 					</div>
 				))}

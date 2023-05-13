@@ -4,6 +4,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate, useParams } from 'react-router-dom';
 import { country } from '../../@types';
 import { auth, db } from '../../firebase';
+import useRedirectToLogin from '../../hooks/useRedirectToLogin';
 import Range from './Range';
 import './Voter.css';
 
@@ -14,15 +15,11 @@ const Voter = () => {
 	);
 	const [country, setCountry] = useState<country | null>(null);
 	const { countryId } = useParams();
-	const [user, loading] = useAuthState(auth);
+	const [user] = useAuthState(auth);
 	const navigate = useNavigate();
 	
-	useEffect(() => {
-		if (!user && !loading) {
-			navigate('/login');
-		}
-	}, [user, loading, navigate]);
-
+	useRedirectToLogin();
+	
 	useEffect(() => {
 		if (countryId) {
 			const unsub = onSnapshot(doc(db, 'countries', countryId), (doc) => {
@@ -64,7 +61,6 @@ const Voter = () => {
 	const handleVoteChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		try {
             setVotes((prevVotes) => ({ ...prevVotes, [e.target.name]: parseInt(e.target.value) }));
-            console.log(votes);
 		} catch (e) {
 			console.error(e);
 		}

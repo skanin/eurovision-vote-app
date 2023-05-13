@@ -31,7 +31,6 @@ const Login = () => {
 			const pwd = searchParams.get('password');
 			if (pwd) {
 				searchParams.delete('password');
-				console.dir(searchParams.toString());
 				setSearchParams(searchParams);
 				storePassword(pwd);
 			}
@@ -84,7 +83,7 @@ const Login = () => {
 
 	return (
 		<div id='login-root'>
-			<h1>Hva heter du?</h1>
+			<h1>Hvem er du? 🥸</h1>
 			<form id='login-form' onSubmit={e => e.preventDefault()}>
 			<input type='text' value={name} onChange={handleNameChange} />
 			<br />

@@ -1,4 +1,4 @@
-import { browserLocalPersistence, setPersistence, signInAnonymously } from 'firebase/auth';
+import { signInAnonymously } from 'firebase/auth';
 import { collection, doc, setDoc } from 'firebase/firestore';
 import { useCallback, useEffect, useState } from 'react';
 import { useAuthState, useUpdateProfile } from 'react-firebase-hooks/auth';
@@ -14,12 +14,17 @@ const Login = () => {
 	const navigate = useNavigate();
 	const [searchParams, setSearchParams] = useSearchParams();
 	const [pwd, setPwd] = useState<string | null>(null);
+	const [disabled, setDisabled] = useState(name.length == 0);
 
 	const storePassword = useCallback((pwd : string) => {
 		if (pwd) {
 			setPwd(pwd);
 		}
 	}, []);
+
+	useEffect(() => {
+		setDisabled(name.length == 0);
+	}, [name]);
 
 	useEffect(() => {
 		if (searchParams.has('password')) {
@@ -39,11 +44,11 @@ const Login = () => {
         }
      }, [user, loading, navigate]);
 
-    setPersistence(auth, browserLocalPersistence);
-
 	const signIn = async () => {
+		setDisabled(true);
 		if (pwd !== import.meta.env.VITE_LOGIN_PASSWORD) {
 			console.log('Wrong password');
+			setDisabled(false);
 			return;
 		}
 
@@ -70,6 +75,7 @@ const Login = () => {
 			.catch((error) => {
 				console.log(error);
 			});
+		setDisabled(false);
 	};
 
 	const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -85,7 +91,7 @@ const Login = () => {
 			{user && !updating && !loading ? (
 				''
 			) : (
-				<button disabled={name.length === 0} onClick={() => signIn()} className='sign-in'>
+				<button disabled={disabled} onClick={() => signIn()} className='sign-in'>
 					Logg inn
 				</button>
 			)}

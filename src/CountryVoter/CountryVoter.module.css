@@ -18,8 +18,9 @@
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 2fr));
     gap: 1rem;
+    width: 100%;
 }
 
 .country {
@@ -27,7 +28,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 120px;
     background-size: cover;
     background-position: center;
     border-radius: 8px;
@@ -39,10 +39,8 @@
 .country:active {
     transform: scale(0.95);
 }
-
-.countryName {
-    font-size: 1rem;
-    margin: 0.5rem 0;
+.country > img {
+    width: 100%;
 }
 
 .voter-container {
@@ -83,4 +81,29 @@
     background-color: #0077ff;
     color: #fff;
     cursor: pointer;
+}
+
+.search {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: #f2f2f2;
+  font-size: 1rem;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.countryNameWrapper {
+  background-color: rgba(0, 0, 0, 0.5);
+  /* padding: 0.5rem;
+  width: 100%; */
+}
+
+.countryName {
+  color: white;
+  font-size: 1rem;
+  margin: 0;
+  text-align: center;
 }

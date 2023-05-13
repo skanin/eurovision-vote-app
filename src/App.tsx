@@ -2,6 +2,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import CountryVoter from './CountryVoter/CountryVoter';
+import Voter from './CountryVoter/Voter';
 import LoadWrapper from './LoadWrapper';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
@@ -16,6 +17,7 @@ const App = () => {
 				<Routes>
 					<Route path='/login' element={<Login />} />
 					<Route path='/leaderboard' element={<Home />} />
+					<Route path='/vote/:countryId' element={<Voter />} />
 					<Route path='/' element={<CountryVoter />} />
 				</Routes>
 			</LoadWrapper>

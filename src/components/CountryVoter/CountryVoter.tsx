@@ -2,8 +2,8 @@ import { DocumentData, QuerySnapshot, collection, onSnapshot, query, where } fro
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
-import { country, vote } from '../@types';
-import { auth, db } from '../firebase';
+import { country, vote } from '../../@types';
+import { auth, db } from '../../firebase';
 import styles from './CountryVoter.module.css';
 
 const CountryVoter = () => {

@@ -1,6 +1,9 @@
 .flag-leaderboard {
     text-align: center;
-    margin-bottom: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
 }
 
 @keyframes fadein {
@@ -11,5 +14,9 @@
 .leaderboard-flag {
     animation: fadein 1s;
     text-align: center;
-    width: 3em;
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: fit-content;
+    width: 0;
+    max-width: 3em;
 }

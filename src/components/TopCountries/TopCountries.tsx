@@ -7,7 +7,7 @@ type TopCountriesProps = {
 
 const TopCountries = ({ countries}: TopCountriesProps) => {
     return (
-		<div className='flag-leaderboard'>  
+		<div className='flag-leaderboard'>
 			{countries?.map((country) => (
 				<img
 					key={country?.id}

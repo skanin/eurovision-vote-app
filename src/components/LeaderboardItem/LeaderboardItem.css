@@ -20,19 +20,6 @@
 .leaderboard-item > div {
     align-items: center;
 }
-.leaderboard-item::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    border-right: 2px solid black;
-    margin-top: .5em;
-    margin-bottom: .5em;
-}
-.leaderboard-item:nth-child(odd)::before {
-    display: none;
-}
 
 .leaderboard-item-score {
     font-weight: bold;

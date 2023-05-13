@@ -1,9 +1,9 @@
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import CountryVoter from './CountryVoter/CountryVoter';
-import Voter from './CountryVoter/Voter';
 import LoadWrapper from './LoadWrapper';
+import CountryVoter from './components/CountryVoter/CountryVoter';
+import Voter from './components/CountryVoter/Voter';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import { auth } from './firebase';
@@ -12,7 +12,7 @@ const App = () => {
 	const [, loading] = useAuthState(auth);
 
 	return (
-		<div>
+		<div id='appRoot'>
 			<LoadWrapper loading={loading}>
 				<Routes>
 					<Route path='/login' element={<Login />} />

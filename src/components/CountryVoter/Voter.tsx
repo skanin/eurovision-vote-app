@@ -2,8 +2,8 @@ import { collection, doc, onSnapshot, writeBatch } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate, useParams } from 'react-router-dom';
-import { country } from '../@types';
-import { auth, db } from '../firebase';
+import { country } from '../../@types';
+import { auth, db } from '../../firebase';
 import Range from './Range';
 import './Voter.css';
 

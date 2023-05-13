@@ -10,7 +10,7 @@ const LastVotedCountry = ({ lastVotedCountry, lastVotedCountryAverageScore }: La
     return (
 		<>
 			{lastVotedCountry ? (
-				<div className='last-vote-flex'>
+				<div className='last-vote-flex voter-flex-item'>
 					<div>Sist stemt:</div>
 					<img
 						src={lastVotedCountry.flagUrl}

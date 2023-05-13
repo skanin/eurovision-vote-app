@@ -12,35 +12,15 @@
     color: black;
     display: flex;
     flex-direction: column;
-    flex: 1;
+    align-self: auto;
     min-height: 0;
-    justify-content: space-between;
+    max-height: fit-content;
 }
 .voter-flex > h1 {
     text-align: center;
 }
-
-.voter-grid  {
-    grid-row: auto;
-    grid-column: auto;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    color: #333;
-    row-gap: 1em;
-    animation: fadein 1s;
-    background-color: #D9D9D9;
-    color: black;
-    min-width: 0;
-    width: 100%;
-    display: grid;
-    grid-template-rows: repeat(auto-fit, minmax(0, 1fr));
-    justify-content: center;
-    align-items: center;
-    max-width: 100%;
-}
-.voter-grid > h1 {
-    text-align: center;
+.voter-flex-item {
+    margin: .5em;
 }
 
 .voterHeaderName {
